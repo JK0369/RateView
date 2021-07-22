@@ -12,6 +12,7 @@ class RateView: BaseView {
     var starNumber: Int = 5 {
         didSet { bind() }
     }
+    var currentStar: Int = 0
 
     private var buttons: [UIButton] = []
 
@@ -76,5 +77,7 @@ class RateView: BaseView {
         for i in end + 1..<starNumber {
             buttons[i].setImage(starEmptyImage, for: .normal)
         }
+
+        currentStar = end + 1
     }
 }
